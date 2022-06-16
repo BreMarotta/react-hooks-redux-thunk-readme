@@ -7,6 +7,10 @@ function Astronauts() {
 
   const astronauts = useSelector((state) => state.astronauts.entities);
 
+  const status = useSelector(
+    (state) => state.astronauts.status
+  );
+
   function handleClick() {
     // dispatch the action creator (see below!)
     dispatch(fetchAstronauts());
@@ -19,6 +23,8 @@ function Astronauts() {
   return (
     <div>
       <button onClick={handleClick}>Get Astronauts</button>
+      <div>{status}</div>
+      
       {astronautsList}
     </div>
   );
